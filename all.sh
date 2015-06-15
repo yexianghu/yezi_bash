@@ -19,4 +19,43 @@ git config --global alias.br branch
 git config --global alias.co checkout
 git config --global alias.ci commit
 
-###------------------------------------   git setting end ----------------------------------###
+
+# --> git prompt
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    export PS1='\[\e]0;\w\a\]\n\[\033[01;32m\]\u@\h\[\033[01;34m\] \w$(__git_ps1 " (%s)")\n\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
+else
+    which git && echo wget --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+fi
+
+###------------------------------------ git setting end ----------------------------------###
+
+
+
+###------------------------------------ path setting begin ----------------------------------###
+export PATH=$PATH:~/bin:/opt/genymotion
+export ANDROID_SDK_DIR=~/Android/Sdk
+export ANDROID_HOME=$ANDROID_SDK_DIR
+export ANDROID_NDK_DIR=~/Android/Ndk
+export ANDROID_NDK_HOME=$ANDROID_NDK_DIR
+export PATH=$PATH:$HOME/bin:$ANDROID_SDK_DIR/tools/:$ANDROID_SDK_DIR/platform-tools/:$ANDROID_NDK_DIR
+
+export CVSROOT=:ext:yunx@cvs.oslo.osa/var/cvs/cvsroot
+export CVS_RSH=ssh
+
+export GCC_THREADS=8
+ccache -M 24G > /dev/null
+export USE_CCACHE=1
+export ICECC_THREADS=40
+export CC="ccache gcc"
+export CXX="ccache g++"
+if [ -f "/usr/bin/ccache" ]; then
+    export ANDROID_GOMA_WRAPPER="/usr/bin/ccache"
+fi
+###------------------------------------ path setting end ----------------------------------###
+
+
+###------------------------------------ utils seting begin ----------------------------------###
+alias gno='gnome-open'
+alias gm='genymotion'
+###------------------------------------ utils seting end ----------------------------------###

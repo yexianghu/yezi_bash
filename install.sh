@@ -10,17 +10,21 @@ sudo apt-add-repository -y ppa:paolorotolo/android-studio
 #PPA for oracle java
 sudo add-apt-repository -y ppa:webupd8team/java 
 
-
+#PPA for chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 sudo apt-get update
 
 
+#install chrome
+sudo apt-get install google-chrome-stable
 
 #install common tools
 sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox
 
 #install develop tools
-sudo apt-get install -y android-studio oracle-java7-installer
+sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache
 
 #chnroute setup
 # https://github.com/fivesheep/chnroutes
