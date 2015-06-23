@@ -55,7 +55,19 @@ fi
 ###------------------------------------ path setting end ----------------------------------###
 
 
-###------------------------------------ utils seting begin ----------------------------------###
+###------------------------------------ utils setting begin ----------------------------------###
 alias gno='gnome-open'
 alias gm='genymotion'
-###------------------------------------ utils seting end ----------------------------------###
+alias ai='adb -d install'
+alias aie="adb -e install"
+alias al='adb -d logcat -vtime'
+alias ale='adb -e logcat -vtime'
+alias adb_refresh='sudo $ANDROID_SDK_DIR/platform-tools/adb kill-server && sudo $ANDROID_SDK_DIR/platform-tools/adb start-server'
+###------------------------------------ utils setting end ----------------------------------###
+
+###------------------------------------ java setting begin ---------------------------------###
+JAVA_HOME=/usr/lib/jvm/java-7-oracle/
+###------------------------------------ java setting begin ---------------------------------###
+
+
+
