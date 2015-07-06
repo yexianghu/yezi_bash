@@ -28,6 +28,10 @@ else
     which git && echo wget --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
 fi
 
+
+# -->git diff
+git config --global diff.tool bcompare
+git config --global merge.tool bcompare
 ###------------------------------------ git setting end ----------------------------------###
 
 

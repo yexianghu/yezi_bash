@@ -24,7 +24,7 @@ sudo apt-get install google-chrome-stable
 sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox
 
 #install develop tools
-sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache
+sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache swig3.0
 
 #chnroute setup
 # https://github.com/fivesheep/chnroutes
