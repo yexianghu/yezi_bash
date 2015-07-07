@@ -21,7 +21,7 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 
 #install common tools
-sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox
+sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox global wireshark
 
 #install develop tools
 sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache swig3.0
