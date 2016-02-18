@@ -42,15 +42,17 @@ mkdir -p ~/github
 mkdir -p ~/.bash.d
 cd ~/github
 git clone https://github.com/yexianghu/yezi_bash.git
-ln -s ~/github/yezi_bash .bash.d
+ln -s ~/github/yezi_bash ~/.bash.d
 echo "source ~/.bash.d/all.sh" >> ~/.bashrc
+wget --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+source ~/.bashrc
 
 
 #download emacs configure from github
 cd ~/github
 git clone https://github.com/yexianghu/yezi_emacs_configure.git
 cd ~/github/yezi_emacs_configure
-git checkout origin/new_dev
+git checkout -b new_dev origin/new_dev
 ln -s ~/github/yezi_emacs_configure ~/.emacs.d
 
 
