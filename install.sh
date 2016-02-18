@@ -21,7 +21,7 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 
 #install common tools
-sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox global wireshark samba curl ssh
+sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox global wireshark samba curl ssh exfat-fuse exfat-utils
 
 #install develop tools
 sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache swig3.0 eclipse
@@ -57,7 +57,10 @@ ln -s ~/github/yezi_emacs_configure ~/.emacs.d
 #download bcompare
 # http://www.scootersoftware.com/download.php
 
-
+#download git-diffall
+cd ~/github
+git clone https://github.com/thenigan/git-diffall.git
+sudo cp /home/yezi/github/git-diffall/git-diffall $(git --exec-path)
 
 
 

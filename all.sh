@@ -32,6 +32,16 @@ fi
 # -->git diff
 git config --global diff.tool bcompare
 git config --global merge.tool bcompare
+git config --global difftool.prompt false
+git config --global mergetool.prompt false
+
+# quick co
+git_co_to_btsid() {
+	git co taskbranch/TLJ-$1
+}
+
+alias gcot='git_co_to_btsid'
+
 ###------------------------------------ git setting end ----------------------------------###
 
 
@@ -62,11 +72,15 @@ fi
 ###------------------------------------ utils setting begin ----------------------------------###
 alias gno='gnome-open'
 alias gm='genymotion'
-alias ai='adb -d install'
-alias aie="adb -e install"
+alias ai='adb -d install -r'
+alias aie="adb -e install -r"
 alias al='adb -d logcat -vtime'
 alias ale='adb -e logcat -vtime'
 alias adb_refresh='sudo $ANDROID_SDK_DIR/platform-tools/adb kill-server && sudo $ANDROID_SDK_DIR/platform-tools/adb start-server'
+
+alias boost_cinstall='adb uninstall com.oupeng.pass && ant clean && ant sdebug && ai builds/OperaPass-debug.apk'
+alias boost_install='adb uninstall com.oupeng.pass && ant sdebug -Doupeng.use.testserver=false&& ai builds/OperaPass-debug.apk'
+alias boost_lint='lint --disable InvalidPackage,MissingTranslation,ContentDescription,HardcodedText --html result.html android'
 ###------------------------------------ utils setting end ----------------------------------###
 
 ###------------------------------------ java setting begin ---------------------------------###
