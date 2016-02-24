@@ -1,3 +1,5 @@
+#!/bin/bash 
+
 #insall gnome optional
 #sudo apt-get install gnome
 
@@ -18,13 +20,25 @@ sudo apt-get update
 
 
 #install chrome
-sudo apt-get install google-chrome-stable
+sudo apt-get install -y google-chrome-stable
 
 #install common tools
 sudo apt-get install -y vim guake emacs24 synapse gconf-editor git subversion gcolor2 kolourpaint4 virtualbox global wireshark samba curl ssh exfat-fuse exfat-utils
 
+#for java tool charm
+sudo apt-get install -y oracle-java7-installer ant gradle
+
+#for android-studio
+sudo apt-get install -y android-studio
+
+#for eclipse
+sudo apt-get install -y eclipse
+
 #install develop tools
-sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache swig3.0 eclipse
+sudo apt-get install -y ccache swig3.0
+
+#for python
+sudo apt-get install -y ipython bpython
 
 #add IntelliJ ppa
 
@@ -33,7 +47,6 @@ sudo apt-get install -y android-studio oracle-java7-installer ant gradle ccache 
 
 #download skype
 # http://www.skype.com
-
 
 # create github folder
 mkdir -p ~/github
@@ -63,7 +76,3 @@ ln -s ~/github/yezi_emacs_configure ~/.emacs.d
 cd ~/github
 git clone https://github.com/thenigan/git-diffall.git
 sudo cp /home/yezi/github/git-diffall/git-diffall $(git --exec-path)
-
-
-
-
