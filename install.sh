@@ -16,6 +16,10 @@ sudo add-apt-repository -y ppa:webupd8team/java
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
+#PPA for intelliJ
+sudo add-apt-repository ppa:mystic-mirage/pycharm
+sudo apt-add-repository ppa:mmk2410/intellij-idea-community
+
 sudo apt-get update
 
 
@@ -40,7 +44,15 @@ sudo apt-get install -y ccache swig3.0
 #for python
 sudo apt-get install -y ipython bpython
 
-#add IntelliJ ppa
+sudo apt-get install -y virtualenv
+
+sudo apt-get install -y virtualenvwrapper
+
+sudo apt-get install -y intellij-idea-community
+
+sudo apt-get install -y pycharm-community
+
+
 
 #chnroute setup
 # https://github.com/fivesheep/chnroutes
