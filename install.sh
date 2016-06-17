@@ -52,7 +52,22 @@ sudo apt-get install -y intellij-idea-community
 
 sudo apt-get install -y pycharm-community
 
+#sudo apt-get install libffi-dev
 
+#sudo apt-get install libssl-dev
+
+#sudo apt-get install libxml2-dev libxslt1-dev
+
+#sudo apt-get install libmysqlclient-dev
+
+#install mysql
+#sudo apt-get install -y mysql-server
+
+#install python-dev
+#sudo apt-get install -y python-dev
+
+#install libmysqlclient-dev
+#sudo apt-get install libmysqlclient-dev
 
 #chnroute setup
 # https://github.com/fivesheep/chnroutes

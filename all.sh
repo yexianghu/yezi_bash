@@ -14,19 +14,19 @@ git config --global color.ui true
 git config --global core.whitespace trailing-space,space-before-tab,indent-with-non-tab
 
 # alias
-git config --global alias.st status
-git config --global alias.br branch
-git config --global alias.co checkout
-git config --global alias.ci commit
+#git config --global alias.st status
+#git config --global alias.br branch
+#git config --global alias.co checkout
+#git config --global alias.ci commit
 
 
 # --> git prompt
-if [ -f ~/.git-prompt.sh ]; then
-    source ~/.git-prompt.sh
-    export PS1='\[\e]0;\w\a\]\n\[\033[01;32m\]\u@\h\[\033[01;34m\] \w$(__git_ps1 " (%s)")\n\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
-else
-    which git && echo wget --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
-fi
+#if [ -f ~/.git-prompt.sh ]; then
+#    source ~/.git-prompt.sh
+#    export PS1='\[\e]0;\w\a\]\n\[\033[01;32m\]\u@\h\[\033[01;34m\] \w$(__git_ps1 " (%s)")\n\[\033[1;$((31+3*!$?))m\]\$\[\033[00m\] '
+#else
+#    which git && echo wget --no-check-certificate https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+#fi
 
 
 # -->git diff
@@ -81,6 +81,10 @@ alias adb_refresh='sudo $ANDROID_SDK_DIR/platform-tools/adb kill-server && sudo 
 alias boost_cinstall='adb uninstall com.oupeng.pass && ant clean && ant sdebug && ai builds/OperaPass-debug.apk'
 alias boost_install='adb uninstall com.oupeng.pass && ant sdebug -Doupeng.use.testserver=false&& ai builds/OperaPass-debug.apk'
 alias boost_lint='lint --disable InvalidPackage,MissingTranslation,ContentDescription,HardcodedText --html result.html android'
+
+alias next_cinstall='adb uninstall com.opera.max && ./gradlew clean && ./gradlew assembleArmDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-debug.apk'
+alias next_install='./gradlew assembleArmDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-debug.apk'
+alias next_build='./gradlew assembleArmDebug'
 ###------------------------------------ utils setting end ----------------------------------###
 
 ###------------------------------------ java setting begin ---------------------------------###
@@ -91,3 +95,48 @@ JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 ###-------------------------------------python begin --------------------------------------###
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 ###-------------------------------------python end-----------------------------------------###
+
+###------------------------------------find-----------------------------------------------###
+f () {
+
+    local res=~/.findr
+
+    find . -name $@ | tee $res
+
+    local lines=$(cat $res | wc -l)
+
+    if [ $lines -eq 1 ];then
+
+        echo -n "  [Only one! \"e\"-> vi, \"q\"-> quit, \"d\"-> del] : "
+
+        read -k 1 cmd
+
+        echo ""
+
+        case $cmd in
+
+            "q")
+
+                return
+
+                ;;
+
+            "e")
+
+                vi $(cat $res)
+
+                ;;
+
+            "d")
+
+                rm $(cat $res)
+
+                ;;
+
+        esac
+
+    fi
+
+}
+
+###-------
