@@ -82,9 +82,12 @@ alias boost_cinstall='adb uninstall com.oupeng.pass && ant clean && ant sdebug &
 alias boost_install='adb uninstall com.oupeng.pass && ant sdebug -Doupeng.use.testserver=false&& ai builds/OperaPass-debug.apk'
 alias boost_lint='lint --disable InvalidPackage,MissingTranslation,ContentDescription,HardcodedText --html result.html android'
 
-alias next_cinstall='adb uninstall com.opera.max && ./gradlew clean && ./gradlew assembleArmDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-debug.apk'
-alias next_install='./gradlew assembleArmDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-debug.apk'
-alias next_build='./gradlew assembleArmDebug'
+alias next_cinstall='adb uninstall com.opera.max && ./gradlew clean && ./gradlew maxDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-oupengmax-debug.apk'
+alias next_install='./gradlew maxDebug && adb install -r build/outputs/apk/OperaMax-6.0.0-arm-oupengmax-debug.apk'
+alias next_build='./gradlew maxDebug'
+
+alias startss="sudo sslocal -c ~/.bash.d/ss.json -d start"
+alias stopss="sudo sslocal -c ~/.bash.d/ss.json -d stop"
 ###------------------------------------ utils setting end ----------------------------------###
 
 ###------------------------------------ java setting begin ---------------------------------###

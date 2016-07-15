@@ -1,0 +1,8 @@
+{
+"server":"104.238.160.93",
+"server_port":9091,
+"local_port":9090,
+"password":"L0veopera",
+"timeout":1000,
+"method":"aes-256-cfb"
+}
