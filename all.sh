@@ -2,8 +2,7 @@
 
 #Identity
 git config --global user.name "xianghuy"
-git config --global user.email yexianghu@gmail.com
-
+git config --global user.email xianghuy@opera.com
 #editor
 git config --global core.editor vim
 
@@ -68,6 +67,12 @@ if [ -f "/usr/bin/ccache" ]; then
 fi
 ###------------------------------------ path setting end ----------------------------------###
 
+###-------------------------------------go settings begin---------------------------------###
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/GoProject
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+###-------------------------------------go settings end-----------------------------------###
 
 ###------------------------------------ utils setting begin ----------------------------------###
 alias gno='gnome-open'
@@ -88,6 +93,9 @@ alias next_build='./gradlew maxDebug'
 
 alias startss="sudo sslocal -c ~/.bash.d/ss.json -d start"
 alias stopss="sudo sslocal -c ~/.bash.d/ss.json -d stop"
+
+alias o12r="make clean && make all DEBUG=NO UI_DEBUG=NO TARGET_ARCHS=armv5 USE_MINI_PACKAGE_NAME=YES PRODUCT=oupeng REPACKAGE_APK=YES BETA=NO"
+alias o12b="make all USE_MINI_PACKAGE_NAME=YES BETA=NO && adb install -r bin/upload/oupeng-*-debug*.apk"
 ###------------------------------------ utils setting end ----------------------------------###
 
 ###------------------------------------ java setting begin ---------------------------------###
@@ -141,5 +149,4 @@ f () {
     fi
 
 }
-
 ###-------
